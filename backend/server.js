@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // Allow only this origin
+    origin: "https://atte-stellar-6f5xdjfmd-programmer-shivanshs-projects.vercel.app/", // Allow only this origin
   })
 );
 
