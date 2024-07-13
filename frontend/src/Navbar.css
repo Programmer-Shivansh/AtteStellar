@@ -1,0 +1,143 @@
+/* Navbar.css */
+
+/* Navbar container */
+.navbar {
+  background-color: #2c3e50; /* Dark color for navbar */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between; /* Space between menu and button */
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for a subtle 3D effect */
+}
+
+/* Navbar menu */
+.navbar-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar menu items */
+.navbar-menu li {
+  margin: 0 1rem;
+}
+
+/* Navbar links */
+.navbar-menu li a {
+  text-decoration: none;
+  color: #ecf0f1; /* Light color for text */
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s, border-bottom 0.3s; /* Smooth transition for color and underline */
+}
+
+/* Navbar links hover effect */
+.navbar-menu li a:hover {
+  color: #3498db; /* Color change on hover */
+  border-bottom: 2px solid #3498db; /* Underline effect on hover */
+}
+
+/* Connect to Wallet button */
+.connect-button {
+  background-color: #3498db; /* Blue color for button */
+  color: #ecf0f1; /* Light color for text */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and scale */
+}
+
+/* Connect to Wallet button hover effect */
+.connect-button:hover {
+  background-color: #2980b9; /* Darker blue for hover effect */
+  transform: scale(1.05); /* Slightly scale up the button */
+}
+
+/* Navbar mobile menu button (optional) */
+.navbar .menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-menu li {
+    margin: 0.5rem 0;
+  }
+
+  .navbar .menu-button {
+    display: block;
+  }
+
+  .navbar-menu.show-menu {
+    display: flex;
+  }
+}
+
+/* Navbar.css */
+
+/* Existing styles */
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.modal-content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 300px; /* Make the modal smaller */
+  width: 80%; /* Responsive width */
+}
+
+/* Modal close button */
+.modal-close {
+  background-color: #3498db; /* Blue color for button */
+  color: #ecf0f1; /* Light color for text */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem; /* Smaller font size */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and scale */
+}
+
+.modal-close:hover {
+  background-color: #2980b9; /* Darker blue for hover effect */
+  transform: scale(1.05); /* Slightly scale up the button */
+}
+
+.modal-close:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Custom focus outline */
+}

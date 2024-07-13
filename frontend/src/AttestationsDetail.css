@@ -1,0 +1,65 @@
+.AttestationsDetail {
+    padding: 20px;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .attestation-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: relative;
+    overflow: hidden; /* Ensures content does not overflow outside card */
+  }
+  
+  .attestation-card:hover .attestation-detail {
+    white-space: normal; /* Allows text to wrap on hover */
+    overflow: visible; /* Ensures text is visible on hover */
+  }
+  
+  .attestation-card h3 {
+    margin-top: 0;
+  }
+  
+  .attestation-detail {
+    margin-bottom: 8px;
+    overflow: hidden; /* Hides text overflow */
+    text-overflow: ellipsis; /* Shows ellipsis for overflowed text */
+    white-space: nowrap; /* Keeps text on a single line */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .attestation-detail strong {
+    display: inline-block;
+    width: 120px; /* Adjust based on your needs */
+    font-weight: bold;
+  }
+  
+  .attestation-detail span {
+    display: inline-block;
+    max-width: calc(100% - 140px); /* Adjust based on the strong width */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds ellipsis for overflowing text */
+    white-space: nowrap; /* Keeps text on a single line */
+  }
+  
+  .attestation-card:hover .attestation-detail span {
+    max-width: none; /* Removes width restriction on hover */
+    white-space: normal; /* Allows text to wrap */
+    text-overflow: clip; /* Removes ellipsis on hover */
+  }
+  
+  .no-data-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+  }
+  

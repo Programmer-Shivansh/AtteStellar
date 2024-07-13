@@ -1,0 +1,90 @@
+/* CreateSchema.css */
+
+/* Main container for the CreateSchema page */
+.CreateSchema {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
+}
+
+/* Heading for the CreateSchema page */
+.CreateSchema h1 {
+  font-size: 2rem;
+  color: #34495e; /* Darker text color */
+  margin-bottom: 1rem;
+  text-align: center; /* Center-align the heading */
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #2c3e50; /* Dark text color for labels */
+}
+
+/* Input and select field styling */
+.form-group input,
+.form-group select {
+  padding: 0.5rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 1rem; /* Consistent font size */
+}
+
+/* Button styling */
+.form-group button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  font-size: 1rem; /* Consistent font size */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Button hover effect */
+.form-group button:hover {
+  background-color: #2980b9;
+}
+
+/* Response and error message styling */
+.response,
+.error {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem; /* Consistent font size */
+}
+
+/* Response message styling */
+.response {
+  background-color: #eafaf1; /* Light green for success */
+  color: #2c3e50;
+  border: 1px solid #d4edda; /* Light green border for success */
+}
+
+/* Error message styling */
+.error {
+  background-color: #f8d7da; /* Light red for errors */
+  color: #721c24;
+  border: 1px solid #f5c6cb; /* Light red border for errors */
+}
+
+/* CreateSchema.css */
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}

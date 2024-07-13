@@ -7,12 +7,12 @@ import {
     nativeToScVal,
     Address,
   } from "@stellar/stellar-sdk";
-
+import { retrievePublicKey, checkConnection, userSignTransaction } from "../Freighter";
 // import { userSignTransaction } from "../Freighter";
 
 let rpcUrl = "https://soroban-testnet.stellar.org";
 
-let contractAddress ="X";
+let contractAddress ="CCBBTP2FWKLNSEMOXM3VH32FPXVOYK6OBB4D26RPAYATZX5GYN36EHZ4";
 const boolToScVal = (value) => {
   return nativeToScVal(value, { type: "bool" });
 };
