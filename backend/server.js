@@ -16,9 +16,10 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://atte-stellar-6f5xdjfmd-programmer-shivanshs-projects.vercel.app/", // Allow only this origin
+    origin: "https://atte-stellar-hv1fgowyh-programmer-shivanshs-projects.vercel.app/", // Allow only this origin
   })
 );
+
 
 mongoose
   .connect(process.env.MONGO_URI)
