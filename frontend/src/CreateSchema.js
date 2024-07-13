@@ -42,7 +42,7 @@ const CreateSchema = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("http://localhost:5003/data/new", {
+      const result = await axios.post("https://attestellar-backend-yzl9.onrender.com/data/new", {
         fields: entries
       });
       setResponse(result.data);

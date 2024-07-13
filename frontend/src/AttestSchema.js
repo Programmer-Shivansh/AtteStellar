@@ -19,11 +19,11 @@ const SchemaDetail = () => {
     const fetchSchema = async () => {
       try {
         // Fetch schema data
-        const schemaResponse = await axios.get(`http://localhost:5003/data/${id}`);
+        const schemaResponse = await axios.get(`https://attestellar-backend-yzl9.onrender.com/data/${id}`);
         setSchema(schemaResponse.data);
 
         // Fetch attestation count
-        const attestationResponse = await axios.get(`http://localhost:5003/attestations/${schemaResponse.data.schemaUID}`);
+        const attestationResponse = await axios.get(`https://attestellar-backend-yzl9.onrender.com/attestations/${schemaResponse.data.schemaUID}`);
         setAttestationCount(attestationResponse.data.length || 0);
 
         setLoading(false);

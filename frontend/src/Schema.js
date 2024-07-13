@@ -12,7 +12,7 @@ const Schema = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5003/data');
+        const response = await axios.get('https://attestellar-backend-yzl9.onrender.com/data');
         // console.log("Data received:", response.data); // Debugging log
         const sortedData = response.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
         setData(sortedData);

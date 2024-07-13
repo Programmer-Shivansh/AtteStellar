@@ -12,7 +12,7 @@ const AttestationsDetail = () => {
   useEffect(() => {
     const fetchAttestations = async () => {
       try {
-        const response = await axios.get(`http://localhost:5003/attestations/${schemaUID}`);
+        const response = await axios.get(`https://attestellar-backend-yzl9.onrender.com/attestations/${schemaUID}`);
         
         if (response.status === 404) {
           setError('No data found for the given schemaUID');
