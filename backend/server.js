@@ -18,7 +18,7 @@ app.use(
   cors({
     origin:"*", // Allow any origin
     // origin: "http://localhost:3000", // Allow any origin
-    origin: "https://atte-stellar-dunbdtp69-programmer-shivanshs-projects.vercel.app/", // Allow only this origin
+    origin: "https://atte-stellar-dunbdtp69-programmer-shivanshs-projects.vercel.app", // Allow only this origin
   })
 );
 // https://atte-stellar-hv1fgowyh-programmer-shivanshs-projects.vercel.app/
