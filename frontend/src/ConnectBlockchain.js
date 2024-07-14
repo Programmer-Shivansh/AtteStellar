@@ -13,7 +13,7 @@ import {
   const sendTransactionResultToBackend = async (txnResult, schemaUID, attest) => {
     try {
         console.log(schemaUID)
-        const response = await axios.post('https://atte-stellar-hv1fgowwyh-programmer-shivanshs-projects.vercel.app/data/transactions', {
+        const response = await axios.post('https://attestellar-backend-yzl9.onrender.com/data/transactions', {
             txnResult,
             schemaUID,
             attest,

@@ -62,7 +62,7 @@ const CreateSchema = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("https://atte-stellar-hv1fgowwyh-programmer-shivanshs-projects.vercel.app/data/new", {
+      const result = await axios.post("https://attestellar-backend-yzl9.onrender.com/data/new", {
         fields: entries,
         description // Include description in the payload
       });
