@@ -24,7 +24,7 @@ const Schema = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5003/data');
+        const response = await axios.get('https://atte-stellar-hv1fgowwyh-programmer-shivanshs-projects.vercel.app/data');
         const sortedData = response.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
         setData(sortedData);
         setLoading(false);

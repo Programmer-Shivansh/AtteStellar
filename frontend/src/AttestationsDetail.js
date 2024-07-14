@@ -28,7 +28,7 @@ const AttestationsDetail = () => {
   useEffect(() => {
     const fetchAttestations = async () => {
       try {
-        const response = await axios.get(`http://localhost:5003/attestations/${schemaUID}`);
+        const response = await axios.get(`https://atte-stellar-hv1fgowwyh-programmer-shivanshs-projects.vercel.app/attestations/${schemaUID}`);
         // console.log(response)
         if (response.status === 404) {
           setError('No data found for the given schemaUID');

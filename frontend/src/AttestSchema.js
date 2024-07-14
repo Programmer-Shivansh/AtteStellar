@@ -38,7 +38,7 @@ const SchemaDetail = () => {
   useEffect(() => {
     const fetchSchema = async () => {
       try {
-        const schemaResponse = await axios.get(`http://localhost:5003/data/${id}`);
+        const schemaResponse = await axios.get(`https://atte-stellar-hv1fgowwyh-programmer-shivanshs-projects.vercel.app/data/${id}`);
         setSchema(schemaResponse.data);
 
         // const attestationResponse = await axios.get(`http://localhost:5003/attestations/${schemaResponse.data.schemaUID}`);
@@ -99,7 +99,7 @@ const SchemaDetail = () => {
 
     try {
       // Example: sending file to backend
-      await axios.post('http://localhost:5003/upload', { file });
+      await axios.post('https://atte-stellar-hv1fgowwyh-programmer-shivanshs-projects.vercel.app/upload', { file });
 
       // Increment off-chain attestation count
       setOffChainAttestationCount(offChainAttestationCount + 1);

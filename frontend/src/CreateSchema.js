@@ -62,7 +62,7 @@ const CreateSchema = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("http://localhost:5003/data/new", {
+      const result = await axios.post("https://atte-stellar-hv1fgowwyh-programmer-shivanshs-projects.vercel.app/data/new", {
         fields: entries,
         description // Include description in the payload
       });
