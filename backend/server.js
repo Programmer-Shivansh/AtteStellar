@@ -16,7 +16,9 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://atte-stellar-hv1fgowyh-programmer-shivanshs-projects.vercel.app", // Allow only this origin
+    origin:"*", // Allow any origin
+    // origin: "http://localhost:3000", // Allow any origin
+    // origin: "https://atte-stellar-hv1fgowwyh-programmer-shivanshs-projects.vercel.app", // Allow only this origin
   })
 );
 // https://atte-stellar-hv1fgowyh-programmer-shivanshs-projects.vercel.app/
@@ -66,7 +68,7 @@ app.get('/data/:id', async (req, res) => {
 app.post("/data/new", async (req, res) => {
   // console.log("Received data:", req.body); // Debugging log
 
-  const { fields } = req.body;
+  const { fields,description } = req.body;
 
   if (!fields || !Array.isArray(fields)) {
     return res.status(400).json({ error: "Fields array is required" });
@@ -81,7 +83,7 @@ app.post("/data/new", async (req, res) => {
     const schemaUID = fieldsHash.IpfsHash;
 
     // Save IPFS hash and other data to MongoDB
-    const newUser = new User({ fields, schemaUID });
+    const newUser = new User({ fields, schemaUID,description});
     const data = await newUser.save();
 
     // console.log("Saved data:", data); // Debugging log
@@ -123,7 +125,7 @@ app.post("/data/transactions", async (req, res) => {
 
 app.get('/attestations/:id', async (req, res) => {
   const { id } = req.params; // Extract the id from the URL parameters
-  // console.log(id)
+  console.log(id)
   try {
       // Query the User model to find documents where schemaUID matches the id
       const data = await Transaction.find({ schemaUID: id });

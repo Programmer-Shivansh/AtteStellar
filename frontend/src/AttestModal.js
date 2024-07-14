@@ -1,9 +1,26 @@
 import React, { useState } from 'react';
-import './AttestModal.css'; // Make sure to update this CSS file for styling the modal
-// import {handleWalletSelection,openModal} from './ConnectBlockchain'
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Select,
+  Box,
+  Text,
+  useToast,
+} from '@chakra-ui/react';
+
 const AttestModal = ({ newSchema, onClose, onSubmit }) => {
   const [fields, setFields] = useState({});
   const [errors, setErrors] = useState({});
+  const toast = useToast();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -11,7 +28,6 @@ const AttestModal = ({ newSchema, onClose, onSubmit }) => {
       ...prev,
       [name]: value,
     }));
-    // Clear error when the field is updated
     setErrors((prev) => ({
       ...prev,
       [name]: '',
@@ -22,22 +38,20 @@ const AttestModal = ({ newSchema, onClose, onSubmit }) => {
     switch (type) {
       case "Bool":
         return value === "true" || value === "false";
-      // case "symbol_short (9 char)":
-      //   return /^[a-zA-Z0-9_]{1,9}$/.test(value); // 1 to 9 characters
       case "Symbol (32 char)":
-        return /^[a-zA-Z0-9_]{1,32}$/.test(value); // 1 to 32 characters
+        return /^[a-zA-Z0-9_]{1,32}$/.test(value);
       case "32-bit Integers (signed)":
-        return /^-?\d{1,10}$/.test(value); // Includes negative values
+        return /^-?\d{1,10}$/.test(value);
       case "32-bit Integers (unsigned)":
-        return /^\d{1,10}$/.test(value); // Only positive values
+        return /^\d{1,10}$/.test(value);
       case "64-bit Integers (signed)":
-        return /^-?\d{1,19}$/.test(value); // Includes negative values
+        return /^-?\d{1,19}$/.test(value);
       case "64-bit Integers (unsigned)":
-        return /^\d{1,19}$/.test(value); // Only positive values
+        return /^\d{1,19}$/.test(value);
       case "128-bit Integers (signed)":
-        return /^-?\d{1,38}$/.test(value); // Includes negative values
+        return /^-?\d{1,38}$/.test(value);
       case "128-bit Integers (unsigned)":
-        return /^\d{1,38}$/.test(value); // Only positive values
+        return /^\d{1,38}$/.test(value);
       default:
         return false;
     }
@@ -59,53 +73,61 @@ const AttestModal = ({ newSchema, onClose, onSubmit }) => {
       setErrors(newErrors);
       return;
     }
-    // ConnectButton();
-    // openModal();
+
     onSubmit(fields);
   };
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <h2>Attest Schema</h2>
-        {newSchema && newSchema.length > 0 ? (
-          newSchema.map((field, index) => (
-            <div key={index} className="modal-field">
-              <label>
-                {field.field} ({field.type}):
-                {field.type === "Bool" ? (
-                  <select
-                    name={field.field}
-                    value={fields[field.field] || ''}
-                    onChange={handleChange}
-                  >
-                    <option value="" disabled>Select true or false</option>
-                    <option value="true">True</option>
-                    <option value="false">False</option>
-                  </select>
-                ) : (
-                  <input
-                    type="text"
-                    name={field.field}
-                    value={fields[field.field] || ''}
-                    onChange={handleChange}
-                  />
-                )}
-              </label>
-              {errors[field.field] && (
-                <div className="error-message">{errors[field.field]}</div>
-              )}
-            </div>
-          ))
-        ) : (
-          <p>No fields available</p>
-        )}
-        <div className="modal-actions">
-          <button className="modal-button" onClick={onClose}>Cancel</button>
-          <button className="modal-button" onClick={handleSubmit}>Submit</button>
-        </div>
-      </div>
-    </div>
+    <Modal isOpen onClose={onClose}>
+      <ModalOverlay />
+      <ModalContent bg="gray.800" color="white">
+        <ModalHeader>Attest Schema</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          {newSchema && newSchema.length > 0 ? (
+            newSchema.map((field, index) => (
+              <Box key={index} mb={4}>
+                <FormControl isInvalid={errors[field.field]}>
+                  <FormLabel>{field.field} ({field.type})</FormLabel>
+                  {field.type === "Bool" ? (
+                    <Select
+                      name={field.field}
+                      value={fields[field.field] || ''}
+                      onChange={handleChange}
+                      placeholder="Select true or false"
+                    >
+                      <option value="true">True</option>
+                      <option value="false">False</option>
+                    </Select>
+                  ) : (
+                    <Input
+                      type="text"
+                      name={field.field}
+                      value={fields[field.field] || ''}
+                      onChange={handleChange}
+                    />
+                  )}
+                  {errors[field.field] && (
+                    <Text mt={2} color="red.500">{errors[field.field]}</Text>
+                  )}
+                </FormControl>
+              </Box>
+            ))
+          ) : (
+            <Text>No fields available</Text>
+          )}
+        </ModalBody>
+
+        <ModalFooter>
+          <Button colorScheme="red" mr={3} onClick={onClose}>
+            Cancel
+          </Button>
+          <Button colorScheme="teal" onClick={handleSubmit}>
+            Submit
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
   );
 };
 

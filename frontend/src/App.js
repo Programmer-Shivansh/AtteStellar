@@ -1,30 +1,51 @@
 // App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import CreateSchema from './CreateSchema';
 import Schema from './Schema';
-import './App.css'; // Optional: for additional styling
+import './App.css'; // For additional styling
 import SchemaDetail from './AttestSchema';
 import AttestationsDetail from './AttestationsDetail';
+import Home from './Home';
+import ContactUs from './ContactUs';
+
+const Layout = ({ children }) => {
+  const location = useLocation();
+  const hideNavbar = location.pathname === '/';
+
+  // Define background class based on the current route
+  const backgroundClass = location.pathname === `${process.env.PUBLIC_URL}/.png` ? '' : 'page-background';
+
+  return (
+    <div className={backgroundClass}>
+      {!hideNavbar && <Navbar />} {/* Conditionally render Navbar */}
+      <div className="content">
+        {children}
+      </div>
+    </div>
+  );
+};
+
 const App = () => {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
+      <Layout>
         <Routes>
-          <Route path="/" element={<div>Welcome to the App</div>} />
+          <Route path="/" element={<Home />} />
           <Route path="/create-schema" element={<CreateSchema />} />
           <Route path="/schema/:id" element={<SchemaDetail />} />
           <Route path="/attestations/:schemaUID" element={<AttestationsDetail />} />
           <Route path="/schema" element={<Schema />} />
+          <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
-      </div>
+      </Layout>
     </Router>
   );
 };
 
 export default App;
+
 
 // import React, { useState } from "react";
 // import axios from "axios";

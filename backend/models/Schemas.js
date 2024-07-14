@@ -27,6 +27,10 @@ const userSchema = new Schema({
     type: String,
     required: true, // Add required if IPFS hash is mandatory
   },
+  description: {
+    type: String,
+    required: true,
+  },
   timestamp: {
     type: Date,
     default: Date.now,

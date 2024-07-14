@@ -2,99 +2,103 @@
 
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f6f9;
-  }
-  
-  /* Container for the main schema content */
-  .Schema {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Heading */
-  .Schema h1 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  
-  /* Container for schema cards */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f9;
+}
+
+/* Container for the main schema content */
+.Schema {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.Schema h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Container for schema cards */
+.schema-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Individual schema card */
+.schema-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Header inside schema card */
+.schema-header {
+  margin-bottom: 1rem;
+}
+
+/* Schema UID style */
+.schema-header h2 {
+  font-size: 1.75rem;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Document ID style */
+.document-id {
+  font-size: 1rem;
+  color: #7f8c8d;
+  text-align: center;
+}
+
+/* Content inside schema card */
+.schema-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Column styling for each piece of data */
+.schema-column {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+/* Styling for labels */
+.schema-column strong {
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Styling for description field */
+.schema-description {
+  margin-top: 1rem;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
   .schema-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  
-  /* Individual schema card */
-  .schema-card {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  /* Header inside schema card */
-  .schema-header {
-    margin-bottom: 1rem;
-  }
-  
-  /* Schema UID style */
-  .schema-header h2 {
-    font-size: 1.75rem;
-    color: #3498db;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-  
-  /* Document ID style */
-  .document-id {
-    font-size: 1rem;
-    color: #7f8c8d;
-    text-align: center;
-  }
-  
-  /* Content inside schema card */
-  .schema-content {
-    display: flex;
     flex-direction: column;
+    align-items: center;
   }
-  
-  /* Column styling for each piece of data */
-  .schema-column {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border-radius: 4px;
-    background-color: #f9f9f9;
+
+  .schema-card {
+    width: 100%;
+    max-width: none;
   }
-  
-  /* Styling for labels */
-  .schema-column strong {
-    color: #2c3e50;
-    display: block;
-    margin-bottom: 0.25rem;
-  }
-  
-  /* Add responsiveness */
-  @media (max-width: 768px) {
-    .schema-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .schema-card {
-      width: 100%;
-      max-width: none;
-    }
-  }
-  
+}

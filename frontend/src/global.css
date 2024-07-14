@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* fonts */
+    --button: Inter;
+    --heading-4: Sora;
+  
+    /* font sizes */
+    --button-size: 1.063rem;
+    --sub-title-size: 1.125rem;
+    --navigation-size: 1rem;
+    --heading-4-size: 2rem;
+  
+    /* Colors */
+    --secondary: #050505;
+    --primary: #fff;
+    --text: #cdcdcd;
+    --border: rgba(47, 70, 106, 0.1);
+  
+    /* Gaps */
+    --gap-xl: 1.25rem;
+  
+    /* Paddings */
+    --padding-xl: 1.25rem;
+    --padding-11xs: 0.125rem;
+    --padding-sm: 0.875rem;
+    --padding-7xl: 1.625rem;
+    --padding-34xl: 3.312rem;
+  }
+  
